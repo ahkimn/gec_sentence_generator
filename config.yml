@@ -1,0 +1,60 @@
+BREAK_HALFLINE: "\t\t=============\n"
+BREAK_LINE: '=====================
+
+  '
+BREAK_SUBLINE: "\t=================\n"
+database_params:
+  sort_form_prefix: stf
+  sort_tag_prefix: stt
+  unique_form_prefix: uf
+  unique_syntactic_tag_prefix: ust
+  unique_token_prefix: ut
+language_params:
+  character_prefix: c
+  delimiter: "\u3002"
+  index_node: in.pkl
+  node_count: nc.pkl
+  node_index: ni.pkl
+  pad_index: 0
+  pad_token: '*'
+  start_index: 2
+  start_token: START
+  stop_index: 3
+  stop_token: STOP
+  syntactic_tag_prefix: st
+  token_prefix: t
+  unknown_index: 1
+  unknown_token: UNK
+parser_params:
+  delimiter: "\u3002"
+  dictionary_dir: /usr/local/lib/mecab/dic/mecab-ipadic-neologd
+  parse_indices:
+  - 0
+  - 1
+  - 4
+  - 5
+  - 6
+  parse_labels:
+  - part-of-speech
+  - part-of-speech sub-category
+  - inflection
+  - conjugation
+  - root form
+rule_params:
+  class: Rule Class
+  mapping_deleted: Deleted
+  mapping_inserted: Inserted
+  mapping_modified: Modified
+  mapping_preserved: Preserved
+  mapping_substituted: Substituted
+  name: '#'
+  rule_type: Rule Type
+  subclass: Rule Subclass
+  syntactic_tag_mask: Requisite Syntactic Tags
+  syntactic_tags_correct: Correct Phrase Syntactic Tags
+  syntactic_tags_error: Error Phrase Syntactic Tags
+  template_correct_phrase: Template Correct Phrase
+  template_error_phrase: Template Error Phrase
+  type_character: Character
+  type_token: Token
+seed: 23
