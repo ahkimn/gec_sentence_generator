@@ -6,6 +6,7 @@
 # Python Version: 3.7
 
 import numpy as np
+import math
 
 from . import config
 from . import languages
@@ -286,9 +287,10 @@ class LengthBiasSampler:
 
     def bias_permute(self, bias):
 
-        weights = np.array([1 + k * bias for k in self.rel_lengths])
-        weights = weights / np.sum(weights)
+        weights = np.array([math.exp((0.5 - k) * bias)
+                            for k in self.rel_lengths])
 
+        weights = weights / np.sum(weights)
         indices = []
 
         for i in range(self.n):
@@ -296,9 +298,9 @@ class LengthBiasSampler:
             j = np.random.choice(self.n, p=weights)
             indices.append(j)
             weights[j] = 0
+
+            if np.sum(weights) == 0:
+                break
             weights = weights / np.sum(weights)
 
         return indices
-
-
-

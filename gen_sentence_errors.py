@@ -34,8 +34,8 @@ if __name__ == '__main__':
 
     parser.add_argument(
         '--length_bias', metavar='LENGTH_BIAS',
-        type=float, help='Float between -1.0 and 1.0; 1.0 biases \
-        towards the least-errored sentences and -1.0 biases towards \
+        type=float, help='Float bias value; Positive values bias \
+        towards the least-errored sentences and negative values bias towards \
         the most-errored sentences', default=0.0)
 
     parser.add_argument(
