@@ -1057,15 +1057,17 @@ body .markdown-body
 .codehilite .gc{color:#999;background-color:#EAF2F5}
 </style><title>README</title></head><body><article class="markdown-body"><h1 id="general-setup">General Setup<a class="headerlink" href="#general-setup" title="Permanent link"></a></h1>
 <ol>
-<li>Change the variable PROJECT_DIR in line 13 of src/config.py to match the filepath to the root of your local project directory.</li>
+<li>Change the variable PROJECT_DIR in line 13 of <em>src/config.py</em> to match the filepath to the root of your local project directory.</li>
 <li>
-<p>Edit the filepath listed under cfg[&lsquo;parser_params&rsquo;][&lsquo;dictionary_dir&rsquo;] on line 61 of src/config.py to match the dictionary directory of Mecab on your local machine.</p>
+<p>Edit the filepath listed under cfg[&lsquo;parser_params&rsquo;][&lsquo;dictionary_dir&rsquo;] on line 61 of <em>src/config.py</em> to match the dictionary directory of Mecab on your local machine.</p>
 <ul>
-<li>For best results install the mecab-ipadic-neologd dictionary, which is <a href="https://github.com/neologd/mecab-ipadic-neologd">here</a>.
-3. Run <em>src/config.py</em> as follows:
-<div class="codehilite"><pre><span class="go">python src/config.py</span>
-</pre></div></li>
+<li>For best results install the mecab-ipadic-neologd dictionary, which is <a href="https://github.com/neologd/mecab-ipadic-neologd">here</a>.</li>
 </ul>
+</li>
+<li>
+<p>Run <em>src/config.py</em> as follows to generate a local configuration file:
+    <div class="codehilite"><pre><span class="go">python src/config.py</span>
+</pre></div></p>
 </li>
 </ol>
 <h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"></a></h1>
@@ -1073,9 +1075,24 @@ body .markdown-body
 <li>From the root directory, run the following command and follow the terminal prompts:
   <div class="codehilite"><pre><span class="go">python gen_sentence_errors.py</span>
 </pre></div></li>
-<li>Optionally, the following two flags can also be used:</li>
-</ol>
+<li>
+<p>Optionally, the following two flags can also be used:</p>
 <ul>
 <li><em>length_bias</em> - biases the output generated sentences to those with fewer or more errors. If the value of <em>length_bias</em> is greater than 0, sentences with fewer errors will be weighted more highly. If <em>length_bias</em> is less than 0, than sentences with more errors will be weighted more highly.</li>
 <li><em>n_show</em> - determines the number of candidate sentences to display per iteration</li>
-</ul></article></body></html>
+</ul>
+</li>
+</ol>
+<h1 id="output-format">Output Format<a class="headerlink" href="#output-format" title="Permanent link"></a></h1>
+<ol>
+<li>The output format is as follows for each generated error sentence:</li>
+</ol>
+<ul>
+<li><strong>C</strong>: Correct sentence inputted, with green highlights over modified in the error sentence</li>
+<li><strong>E</strong>: Error sentence generated, with red highlights over errors</li>
+<li><strong>R</strong>: Rules applied to the sentence, with rule names taken from <em>data/rules.csv</em></li>
+</ul>
+<h1 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link"></a></h1>
+<ol>
+<li>Library dependencies are listed in <em>requirements.txt</em>. Anaconda users may use <em>conda_requirements.txt</em> to install the requisite libraries.</li>
+</ol></article></body></html>
